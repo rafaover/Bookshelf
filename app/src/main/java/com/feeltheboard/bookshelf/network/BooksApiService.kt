@@ -21,5 +21,5 @@ object BooksApiClient {
 
 interface BooksApiService {
     @GET("v1/volumes?q=science+fiction/")
-    suspend fun getBooks() : Response<Books>
+    suspend fun getBooks(): List<Books>
 }
