@@ -16,8 +16,12 @@ class BookShelfViewModel: ViewModel() {
     }
     private fun getBooks() =
         viewModelScope.launch {
-            val booksRepository = NetworkBooksRepository()
-            val books = booksRepository.getBooks()
-            bookShelfState = ("${books.items.size} Books found!")
+            try {
+                val booksRepository = NetworkBooksRepository()
+                val books = booksRepository.getBooks()
+                bookShelfState = ("${books.items.size} Books found!")
+            } catch (e: Exception) {
+                bookShelfState = "Error: ${e.message}"
+            }
         }
 }
