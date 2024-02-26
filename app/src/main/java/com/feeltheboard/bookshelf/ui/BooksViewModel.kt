@@ -9,7 +9,7 @@ import com.feeltheboard.bookshelf.data.NetworkBooksRepository
 import kotlinx.coroutines.launch
 
 class BookShelfViewModel: ViewModel() {
-    private var bookShelfState: String by mutableStateOf("")
+    var bookShelfState: String by mutableStateOf("")
 
     init {
         getBooks()
@@ -18,6 +18,6 @@ class BookShelfViewModel: ViewModel() {
         viewModelScope.launch {
             val booksRepository = NetworkBooksRepository()
             val books = booksRepository.getBooks()
-            bookShelfState = ("{$books.size} Books found!")
+            bookShelfState = ("${books.items.size} Books found!")
         }
 }

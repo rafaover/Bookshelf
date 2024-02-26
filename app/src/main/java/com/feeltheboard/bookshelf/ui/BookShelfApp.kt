@@ -5,6 +5,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.feeltheboard.bookshelf.ui.components.BookShelfAppTopBar
 import com.feeltheboard.bookshelf.ui.components.BookShelfHomeScreen
 
@@ -18,7 +19,11 @@ fun BookShelfApp() {
         Surface(
             modifier = Modifier.fillMaxSize()
         ) {
-            BookShelfHomeScreen(contentPadding = it)
+            val booksViewModel: BookShelfViewModel = viewModel()
+            BookShelfHomeScreen(
+                books = booksViewModel.bookShelfState,
+                contentPadding = it
+            )
         }
     }
 }
