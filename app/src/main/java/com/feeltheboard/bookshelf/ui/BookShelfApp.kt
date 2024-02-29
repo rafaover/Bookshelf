@@ -7,11 +7,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.feeltheboard.bookshelf.BookShelfApplication
+import com.feeltheboard.bookshelf.LocalBookShelfViewModel
 import com.feeltheboard.bookshelf.ui.components.BookShelfAppTopBar
 import com.feeltheboard.bookshelf.ui.components.BookShelfHomeScreen
 
 @Composable
 fun BookShelfApp() {
+    val viewModel = LocalBookShelfViewModel.current
     Scaffold(
         topBar = {
             BookShelfAppTopBar()
@@ -21,7 +23,7 @@ fun BookShelfApp() {
             modifier = Modifier.fillMaxSize()
         ) {
             BookShelfHomeScreen(
-                books = (LocalContext.current.applicationContext as BookShelfApplication).bookShelfViewModel.bookShelfState,
+                books = viewModel.bookShelfState,
                 contentPadding = it
             )
         }
