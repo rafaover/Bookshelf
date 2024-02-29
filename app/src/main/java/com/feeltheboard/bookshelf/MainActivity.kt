@@ -14,6 +14,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val app = application as BookShelfApplication
         setContent {
+            /** 2. CompositionLocalProvider is used to provide the view model to the entire app
+             * using the LocalBookShelfViewModel CompositionLocal created on the
+             * BookShelfApplication class.
+             * */
             CompositionLocalProvider(LocalBookShelfViewModel provides app.bookShelfViewModel) {
                 BookshelfTheme {
                     Surface(

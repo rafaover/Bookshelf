@@ -13,6 +13,7 @@ import com.feeltheboard.bookshelf.ui.components.BookShelfHomeScreen
 
 @Composable
 fun BookShelfApp() {
+    // Access the BookShelfViewModel from the CompositionLocal
     val viewModel = LocalBookShelfViewModel.current
     Scaffold(
         topBar = {
@@ -28,4 +29,5 @@ fun BookShelfApp() {
             )
         }
     }
+
 }
