@@ -17,6 +17,10 @@ fun BookShelfAppTopBar(
     modifier: Modifier = Modifier
 ) {
     CenterAlignedTopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(
+          containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
         title = {
             Text(
                 text = stringResource(id = R.string.app_name),
