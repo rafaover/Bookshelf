@@ -1,30 +1,22 @@
 package com.feeltheboard.bookshelf.ui.components
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
-import com.feeltheboard.bookshelf.R
+import androidx.compose.ui.platform.LocalContext
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun BookItem(
-    modifier: Modifier = Modifier,
-    image: Painter,
-    description: String
+    image: String,
 ) {
-    Box {
-        Image(
-            painter = image,
-            contentDescription = description
-        )
-    }
-}
-
-@Preview
-@Composable
-fun BookItemPreview() {
-    BookItem(image = painterResource(R.drawable.bookcover), description = "Book Cover")
+    AsyncImage(
+        model = ImageRequest.Builder(LocalContext.current)
+            .data(image)
+            .crossfade(true)
+            .build(),
+        contentDescription = null,
+        modifier = Modifier.fillMaxWidth()
+    )
 }
