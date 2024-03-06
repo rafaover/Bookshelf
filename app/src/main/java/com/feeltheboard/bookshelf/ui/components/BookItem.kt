@@ -1,8 +1,9 @@
 package com.feeltheboard.bookshelf.ui.components
 
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -17,6 +18,7 @@ fun BookItem(
             .crossfade(true)
             .build(),
         contentDescription = null,
-        modifier = Modifier.fillMaxWidth()
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.fillMaxSize()
     )
 }
