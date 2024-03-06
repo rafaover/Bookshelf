@@ -12,18 +12,17 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BookShelfHomeScreen(
     bookThumbs: List<String>,
-    contentPadding: PaddingValues,
-    modifier: Modifier = Modifier
     ) {
     LazyVerticalStaggeredGrid(
-        columns = StaggeredGridCells.Adaptive(160.dp),
+        columns = StaggeredGridCells.Fixed(2),
         verticalItemSpacing = 4.dp,
         horizontalArrangement = Arrangement.spacedBy(4.dp),
-        contentPadding = contentPadding,
+        contentPadding = PaddingValues(top = 4.dp),
+        userScrollEnabled = true,
         content = {
             items(bookThumbs) { thumb ->
                 BookItem(thumb)
             }
-        }
+        },
     )
 }
