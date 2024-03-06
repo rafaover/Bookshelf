@@ -12,6 +12,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BookShelfHomeScreen(
     bookThumbs: List<String>,
+    contentPadding: PaddingValues,
+    modifier: Modifier = Modifier
     ) {
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Fixed(2),
