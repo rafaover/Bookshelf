@@ -24,7 +24,7 @@ fun BookShelfApp() {
             modifier = Modifier.fillMaxSize()
         ) {
             BookShelfHomeScreen(
-                books = viewModel.bookShelfState,
+                bookThumbs = viewModel.bookShelfThumbnail,
                 contentPadding = it
             )
         }
