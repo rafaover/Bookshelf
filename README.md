@@ -1,12 +1,11 @@
 # BOOKSHELF
 
-### Under Development
-
 A simple application that shows a list of books and their covers. 
 
-- Data was acquired via a Google API using Retrofit and Coroutines.
-- Repository and Container patterns to manage the data and keep separation of concerns.
-- Manual dependency injection was used to provide the data to the ViewModel.
-- Junit for testing
-
-COIL will be used for image display.
+- JETPACK COMPOSE for the UI and KOTLIN for the rest of the application.
+- Data was acquired from a Google Books API using RETROFIT and COROUTINES.
+- COIL for image loading
+- MUTABLESTATEOF for the state of the UI
+- REPOSITORY AND CONTAINER patterns to manage the data and keep separation of concerns.
+- MANUAL DEPENDENCY INJECTION was used to provide the data to the ViewModel and testing
+- JUNIT for unit testing
